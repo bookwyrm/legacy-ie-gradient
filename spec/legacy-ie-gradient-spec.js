@@ -20,5 +20,27 @@ describe('legacyIEGradient', function() {
 
   });
 
+  describe('with non-background rule', function() {
+    var css = '.rule { border-color: #000; }';
+
+    it ('does not change rule', function() {
+      var expected = css;
+      var processed = legacyIEGradient.process(css);
+
+      expect(processed).toBe(expected);
+    });
+  });
+
+  describe('with non-gradient rule', function() {
+    var css = '.rule { background: #fff; }';
+
+    it ('does not change rule', function() {
+      var expected = css;
+      var processed = legacyIEGradient.process(css);
+
+      expect(processed).toBe(expected);
+    });
+  });
+
 });
 
