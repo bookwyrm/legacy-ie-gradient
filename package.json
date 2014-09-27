@@ -1,0 +1,32 @@
+{
+  "name": "legacy-ie-gradient",
+  "version": "0.0.0",
+  "description": "Postprocess CSS to add support for gradients to legacy IEs",
+  "main": "lib/legacy-ie-gradient.js",
+  "scripts": {
+    "test": "jasmine-node spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bookwyrm/legacy-ie-gradient.git"
+  },
+  "keywords": [
+    "ie",
+    "internet explorer",
+    "gradient",
+    "css",
+    "postprocessor"
+  ],
+  "author": "Matt Vanderpol <matt@vanderpol.net> (http://www.vanderpol.net/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bookwyrm/legacy-ie-gradient/issues"
+  },
+  "homepage": "https://github.com/bookwyrm/legacy-ie-gradient",
+  "dependencies": {
+    "postcss": "~2.2.0"
+  },
+  "devDependencies": {
+    "jasmine-node": "~1.14.5"
+  }
+}
