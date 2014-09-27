@@ -19,6 +19,12 @@ describe('ParseGradientValue', function() {
       expect(result.colorStopList.length).toBe(expected_length);
     });
 
+    it('populates direction in result', function() {
+      var expected = 'vertical';
+      var result = parse_gradient_value.parse(css_declaration);
+
+      expect(result.direction).toBe(expected);
+    });
   });
 
   describe('with complex declaration', function() {
@@ -37,5 +43,42 @@ describe('ParseGradientValue', function() {
     });
   });
 
+  describe('with vertical gradient', function() {
+    var css_declaration = 'background: linear-gradient(to top, #000, #fff);';
+
+    it ('sets direction to vertical', function() {
+      var expected = 'vertical';
+      var result = parse_gradient_value.parse(css_declaration);
+      expect(result.direction).toBe(expected);
+    });
+  });
+
+  describe('with horizontal gradient', function() {
+    var css_declaration = 'background: linear-gradient(to right, #000, #fff);';
+
+    it ('sets direction to horizontal', function() {
+      var expected = 'horizontal';
+      var result = parse_gradient_value.parse(css_declaration);
+      expect(result.direction).toBe(expected);
+    });
+  });
+  describe('with diagonal gradient', function() {
+    var css_declaration = 'background: linear-gradient(to right top, #000, #fff);';
+
+    it ('sets direction to horizontal', function() {
+      var expected = 'horizontal';
+      var result = parse_gradient_value.parse(css_declaration);
+      expect(result.direction).toBe(expected);
+    });
+  });
+  //describe('with radial gradient', function() {
+    //var css_declaration = 'background: radial-gradient(ellipse farthest-corner at 45px 45px , #00FFFF 0%, rgba(0, 0, 255, 0) 50%, #0000FF 95%);';
+
+    //it ('sets direction to horizontal', function() {
+      //var expected = 'horizontal';
+      //var result = parse_gradient_value.parse(css_declaration);
+      //expect(result.direction).toBe(expected);
+    //});
+  //});
 
 });
