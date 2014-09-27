@@ -1,3 +1,5 @@
+/* globals require, describe, it, expect */
+
 var legacyIEGradient = require('../lib/legacy-ie-gradient');
 var css = '.rule { background: linear-gradient(to top, #000, #fff); }';
 
